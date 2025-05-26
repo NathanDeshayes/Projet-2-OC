@@ -1,0 +1,625 @@
+/****** General ***********/
+* {
+    font-family: 'Raleway', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+.header {
+    background-color: white;
+    padding: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    height: 20px;
+
+}
+.nav-header {
+    display:flex;
+    margin-left: 30px;
+    color: black;
+    font-weight: 500;
+    gap:30px;
+}
+.nav-header a:hover {
+    color:blue;
+    border-top:2px solid blue;
+}
+:root {
+    --main-color: #0065FC;
+    --main-bg-color: #F2F2F2;
+    --filter-bg-color: #DEEBFF;
+}
+
+.fa-solid {
+    color: var(--main-color);
+}
+
+body {
+
+    justify-content: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    padding-bottom:10px;
+}
+.section-title-2 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+    padding-bottom:10px;
+    padding-left:25px;
+    padding-top:20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.euro {
+    font-weight: 700;
+}
+
+.neutral-star {
+    color: var(--main-bg-color)
+}
+/****** Filtres *******/
+
+
+.barre{
+    display: inline-flex; /*ici j'ai mis un inline flex et j'ai enlevé le max weight car la bordure du container depassait très largement à droite le bouton rechercher */
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    align-items: stretch;
+}
+.filtre {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    gap:10px;
+}
+
+.texte-filtre {
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 0px 10px;
+}
+
+.filtre-button {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+}
+
+.btn-filtre {
+    display: flex;
+    align-items: center;
+    padding: 0px 25px;
+    padding-left: 3px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 20px;
+
+}
+.btn-filtre:hover {
+    background-color: #007BFF; 
+    color: #fff; 
+    border-color: #007BFF;
+}
+
+.btn-filtre .icon {
+    width: 50px;
+    height: 50x;
+    object-fit: contain;
+}
+
+
+.barre i{
+    background-color: #F2F2F2;
+    padding: 10px 15px;
+    color: #000;
+}
+
+.barre input{
+    flex: 1;
+    border: none;
+    padding: 0px 15px;
+    font-size: 16px;
+    outline: none;
+    font-weight: bold;
+}
+
+.barre button{
+    background-color: #0065FC;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.barre button:hover{
+    background-color: #0050c0;
+}
+
+/****** Hebergements And Populaires ***********/
+.hebergements-and-populaires {
+    display: flex;
+    gap: 40px; /* J'adapte mon espace entre les deux sections*/
+    margin-top: 40px;
+    background-color: #F2F2F2; /* gris clair */
+    padding: 40px;
+    border-radius: 20px;
+}
+.hebergement-populaire{
+    display: flex;
+    gap:30px;
+    flex:1 1 48%;
+    min-width: 300px;
+}
+
+.hebergements-and-populaires section {
+
+    box-sizing: border-box; /* Ici j'ai voulu mettre dans une section les parties hébergements et populaires pour qu'elles soient plus facile à gérer avec un flex */
+}
+
+/****** Hebergements ***********/
+.hebergements {
+
+    flex:1;
+    background-color: #f2f2f2; 
+    border-radius: 20px;       /* coins arrondis */
+    padding: 20px 30px 0px 20px; 
+}
+.hebergements-cards {
+    display: flex;
+    flex-wrap: wrap; /* je force le conteneur à être sur une seule ligne*/
+    gap: 20px;
+    justify-content: space-between; /* j'essaye d'avoir au maximum 3 cards sur une seule ligne */
+    margin-left:25px;
+    margin-right:25px;
+    padding-top: 20px;
+
+}
+.card-vertical {
+    width: 220px; /* Ajusté pour 3 cartes par ligne avec un gap */
+    display: flex;
+    flex-direction: column; /*Ici j'utilise colum pour avoir une card scindé en deux parties, une supérieur et une inférieur */
+    border-radius: 20px;
+    overflow: hidden; /*obligatoire pour avoir l'effet coupé en deux de l'image*/
+    background-color: white;
+    box-sizing: border-box;
+    border: solid white 5px;
+}
+.card-vertical img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+.card-vertical .card-content {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+}
+.card-vertical .card-title {
+    font-size: 16px;
+    margin: 0;
+}
+.card-vertical .card-subtitle {
+    font-size: 14px;
+    color: grey;
+    margin: 0;
+}
+
+.card-vertical .card-rating i {
+    color: blue;
+}
+
+.card-vertical .card-rating .neutral-star {
+    color: white;
+}
+.bouton-afficher-plus {
+    display: block; /* le bouton commence sur une nouvelle ligne et prend toute la largeur */
+    padding: 20px 25px;
+    padding-left:0px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer; 
+    font-size:20px;
+
+}
+
+
+/****** Populaires ***********/
+.populaires {
+    width: 32%;
+    flex-shrink:0; /* on ne veut pas que l'element puisse rétrécir*/
+    border-radius: 20px;       /* coins arrondis */
+    background-color: #F2F2F2; /* gris clair */
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+}
+
+.populaires-cards img {
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.hebergement-populaire {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.soustitre{
+    font-color:grey;
+    font-size:13px;
+}
+
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/*** Activités ***/
+
+.activites {
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.activites-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+.activites {
+    display:flex;
+    flex-wrap:wrap;
+    gap: 20px;
+}
+.custom-cards {
+    display: flex;
+    flex-wrap: nowrap; /** On veut que les 4 activités soient allignées **/
+    justify-content: flex-start; /** Correction de bug, la première activité commençait au milieu de la page, flex start permet de la faire commencer à gauche de l'écran **/
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 10px;
+
+    gap:20px;
+}
+.section-title-2{
+    padding-bottom: 0px;
+    padding-top: 40px;
+}
+.custom-card {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    box-sizing: border-box;
+    border: solid white 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.custom-card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+}
+
+.custom-card .custom-card-content {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start; 
+  flex-wrap: nowrap; 
+ 
+  padding: 20px 25px;
+}
+.custom-card .custom-card-title {
+    font-size: 16px;
+    margin: 0;
+}
+
+.footer {
+  background-color: #F2F2F2; /* gris clair */
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 20px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: black;
+}
+
+.footer-column ul {
+  list-style: none; /** Donne un effet plus épuré sans les points de la liste **/
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: grey;
+  font-size: 14px;
+}
+
+.footer-column a:hover {
+  color: black;
+}
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* ===== Responsive ===== */
+
+/* Medium devices (tablettes <= 1024px) */
+@media (max-width: 1024px) {
+
+  body, html {
+    min-width: 320px;
+  }
+
+  .main-container {
+    padding: 0 20px;
+  }
+
+  .hebergements-and-populaires {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hebergement-populaire {
+    flex-direction: column;
+    gap: 30px;
+    min-width: auto;
+  }
+
+  .hebergements, .populaires {
+    width: 100%;
+    padding: 20px 15px;
+    margin: 0;
+  }
+
+  .populaires {
+    margin-top: 30px;
+  }
+
+  .hebergements-cards {
+    justify-content: center; /** L'objecti sur toute la partie responsive va être de progressivement mettre tous les élements en colonne **/
+  }
+
+  .card-vertical {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .populaires-cards {
+    flex-direction: row; /** On cherche à avoir un axe horizontal **/
+    justify-content: space-between;
+  }
+
+  .populaires-cards a {
+    width: 30%;
+  }
+
+  .populaires-cards .card-title {
+    font-size: 14px;
+  }
+
+  .populaires-cards .card-subtitle {
+    font-size: 13px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer-column {
+    margin: 0;
+    min-width: auto;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+    /* Small devices (mobiles < 768px) */
+ @media (max-width: 767.98px) {
+
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+
+    .nav-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-left: 0;
+    }
+
+    .main-container {
+        padding: 0 10px;
+    }
+    .filtre-button {
+            display: grid; /** Ici j'ai été obligé d'utiliser Grid car plus simple que flexbox pour implementer cette solution. Je cherche à avoir deux colonnes pour les filtres en version mobile**/
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        
+    }
+
+    .hebergements-and-populaires {
+        padding: 10px;
+    }
+
+    .hebergement-populaire {
+        gap: 20px;
+    }
+    /* Hébergements, les cartes en colonne */
+    .hebergements-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start; /* aligner en haut */
+        margin-left: 25px;
+        margin-right: 25px;
+        padding-top: 20px;
+    }
+
+    /* Largeur des cartes **/
+    .card-vertical {
+        width: 100%; /* On veut forcer la pleine largeur */
+        max-width: none;
+    }
+
+    /** Populaires, les cartes en colonne */
+    .populaires-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /** Les cartes dans populaires prennent toute la largeur */
+    .populaires-cards .card {
+        width: 100%;
+        flex-direction: row; 
+    }
+
+    /* Activités : cartes en colonne */
+    .activites-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+  .populaires-cards a {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .populaires-cards .card-title {
+    font-size: 13px;
+  }
+
+  .populaires-cards .card-subtitle {
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-column {
+    width: 100%;
+    max-width: none;
+  }
+
+}
