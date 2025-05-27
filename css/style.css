@@ -239,6 +239,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     gap: 6px;
+    background-color: white;
 }
 .card-vertical .card-title {
     font-size: 16px;
